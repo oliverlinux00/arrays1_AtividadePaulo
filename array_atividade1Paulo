@@ -1,0 +1,235 @@
+// 1. Você está organizando a chamada de uma turma com os alunos ["Ana", "Bruno", "Carla", "Diego", "Elena"] para
+// conferir quem abre e quem fecha a lista. Crie uma função fnExibirChamada() que declare esse array e exiba no
+// terminal o primeiro aluno, o último aluno usando .length e o total de estudantes cadastrados.
+
+const alunos = ["Ana", "Bruno", "Carla", "Diego", "Elena"]
+
+function fnExibirChamada () {
+
+    let primeiroAluno = alunos.shift()
+    let segundoAluno = alunos.pop()
+
+    console.log("O Primeiro Aluno: " + primeiroAluno)
+    console.log("O Segundo Aluno: " + segundoAluno)
+} 
+
+fnExibirChamada()
+
+// 2. Durante o fechamento de um pedido online, o array ["Teclado Mecânico", "Mouse Gamer"] já contém dois itens e o
+// cliente resolveu incluir "Headset USB". Crie uma função fnAdicionarProduto(lista, novoItem) que adicione o novo
+// item ao final do array e mostre a lista atualizada no terminal.
+
+function fnAdicionarProduto (novoItem) {
+
+    const pedido = ["Teclado Mecânico", "Mouse Gamer"]
+
+    console.log("Pedido Anterior: ")
+    console.log(pedido)
+    
+    pedido.push(novoItem)
+
+    console.log("Feito a adição de um novo item: ")
+    console.log(pedido)
+
+}
+
+fnAdicionarProduto("Headset USB")
+
+
+
+// 3. Na recepção de um posto de saúde, a fila normal está com ["Marcos", "Juliana", "Roberto"] e chega "Dona Clara
+// (Idosa)" com atendimento prioritário. Crie uma função fnEncaixarPrioridade(fila, nomePaciente) que coloque a
+// paciente prioritária na frente da fila e exiba a nova sequência.
+
+
+const pacientes = ["Marcos", "Juliana", "Roberto"]
+
+pacientes.forEach((pacientes, fila) => {
+
+    console.log((fila + 1) + " Paciente: " + pacientes)
+})
+
+console.log("Adicionando Caso Prioritário")
+
+pacientes.unshift("Dona Clara (Idosa)")
+
+pacientes.forEach((pacientes, fila) => {
+
+    console.log((fila + 1) + " Paciente: " + pacientes)
+})
+
+// 4. A partir da fila ["Dona Clara (Idosa)", "Marcos", "Juliana", "Roberto"], o consultório vai iniciar o atendimento da
+// manhã. Crie uma função fnChamarProximo(fila) que retire o primeiro nome da fila e exiba no terminal quem foi
+// chamado e quem continua aguardando.
+
+const pacientesHospital = ["Dona Clara (Idosa)", "Marcos", "Juliana", "Roberto"]
+
+console.log("Chamando a Primeira Pessoa da Fila: ")
+
+pacientesHospital.forEach((pacientes, fila) => {
+
+    console.log((fila + 1) + " Paciente: " + pacientes)
+})
+
+console.log("Chamando a Próxima Pessoa da Fila: ")
+
+function fnChamarProximo (fila) {
+
+    fila = pacientesHospital
+
+    pacientesHospital.shift()
+
+    pacientesHospital.forEach((pacientes, fila) => {
+
+    console.log((fila + 1) + " Paciente: " + pacientes)
+    })
+}
+
+fnChamarProximo()
+
+
+// 5. Em um editor de texto simples, o usuário realizou as ações ["Escreveu título", "Aplicou negrito", "Inseriu tabela"] e
+// quer desfazer o que fez por último. Crie uma função fnDesfazerAcao(lista) que remova o último elemento do array e
+// mostre no terminal as ações restantes.
+
+
+const textoSimples = ["Escreveu título", "Aplicou negrito", "Inseriu tabela"]
+
+textoSimples.forEach((texto) => {
+
+console.log("Itens Padrão: "+ texto)
+
+})
+
+console.log()
+
+function fnDesfazerAcao () {
+    textoSimples.pop()
+    
+    textoSimples.forEach((texto) => {
+
+    console.log("Feito a Retirada do Último Item: "+ texto)
+
+})
+}
+
+fnDesfazerAcao()
+
+
+// 6. O responsável pelo almoxarifado precisa conferir quantos itens existem no array ["Camiseta", "Calça", "Tênis",
+// "Boné"] antes de iniciar a contagem física. Crie uma função fnVerificarEstoque(lista) que exiba no terminal a
+// quantidade total de itens usando .length.
+
+
+const itens = ["Camiseta", "Calça", "Tenis", "Boné"]
+
+function fnVerificarEstoque(lista) {
+
+    lista = itens
+
+    console.log("Total de Itens no Estoque: " + lista.length)
+    
+}
+
+fnVerificarEstoque()
+
+
+
+// 7. Na portaria de um evento, a lista oficial de convidados é ["Lucas", "Mariana", "Thiago", "Beatriz"] e duas pessoas
+// chegam perguntando se estão autorizadas: "Mariana" e "Rafael". Crie uma função fnEstaNaLista(lista, nome) que
+// verifique a presença de cada nome no array e exiba o resultado no terminal.
+
+
+const convidados = ["Lucas", "Mariana", "Thiago", "Beatriz"] 
+
+function fnEstaNaLista(paut) {
+
+    if(convidados.includes("Mariana")) {
+        console.log("Mariana está na Lista: ")
+    } else {
+        console.log("Mariana não está na Lista!")
+    } 
+    if(convidados.includes("Rafael")) {
+        console.log("Rafael está na Lista: ")
+    } else {
+        console.log("Rafael não está na Lista: ")
+    }
+
+    convidados.forEach((nome, lista) => {
+        console.log("O Convidado é: " + (lista + 1) + " - " + nome)
+    }) 
+
+
+}
+
+fnEstaNaLista()
+
+
+
+// 8. Em um mercado, os corredores seguem a ordem ["Arroz", "Feijão", "Açúcar", "Café", "Sal"] e um repositor precisa
+// saber a posição exata de "Café" e conferir se "Macarrão" consta no array. Crie uma função fnConsultarCorredor(lista,
+// item) que retorne ou exiba a posição encontrada ou o aviso de que o item não está no array.
+
+const ordem = ["Arroz", "Feijao", "Açucar", "Café", "Sal"]
+
+if (ordem.includes("Macarrão")) {
+    console.log("No Corredor Há Macarrão")
+} else {
+    console.log("No Corredor Não Há Macarrão")
+}
+
+function fnConsultarCorredor () {
+    let ordemCafe = ordem.indexOf("Café")
+    console.log("O Café está na Posição: " + (ordemCafe + 1))
+
+    console.log("Segue a lista abaixo: ")
+
+    ordem.forEach((lista, pos) => {
+        console.log((pos + 1) + "-" + lista)
+    })
+
+}
+
+fnConsultarCorredor()
+
+
+// 9. A tabela de preços base de um lanche está armazenada em [15.00, 25.00, 40.00] e o segundo item sofreu reajuste
+// para 28.50. Crie uma função fnAtualizarPreco(lista, indice, novoValor) que altere o valor na posição informada e
+// exiba o array modificado no terminal.
+
+
+const tabPreco = [15.00, 25.00, 40.00]
+
+function fnAtualizarPreco (lista, indice, novoValor) {
+
+    console.log("Tabela de Preços: ")
+
+    tabPreco.forEach((list, pos) => {
+        console.log((pos + 1) + " - " + list)
+    })
+
+    console.log("----------------------------------------------")
+
+    tabPreco[1] = 28.50
+    
+    console.log("Tabela de Preços Atualizado: ")
+    tabPreco.forEach((list, pos) => {
+        console.log((pos + 1) + " - " + list)
+    })
+}
+
+fnAtualizarPreco()
+
+
+// 10. Para montar o boletim inicial de um estudante com as notas 8.0, 7.5 e 9.0, você precisa agrupar esses valores em
+// uma única estrutura. Crie uma função fnCriarBoletim(nota1, nota2, nota3) que armazene as três notas em um array e
+// o exiba ou retorne para conferência.
+
+function fnCriarBoletim(nota1, nota2, nota3) {
+    const notasAlunos = [nota1, nota2, nota3];
+    return notasAlunos;
+}
+
+const boletim = fnCriarBoletim(8.0, 7.5, 9.0);
+
+console.log(boletim);
